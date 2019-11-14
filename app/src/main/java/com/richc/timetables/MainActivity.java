@@ -31,15 +31,18 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
 
                 int min = 1;
+                int timesTableValue=1;
 
                 if (i < min) {
                     // Not allow zero as minimum
                     timesTableSeekBar.setProgress(min);
+                    timesTableValue = min;
                 } else {
-
+                    timesTableValue = i;
                 }
 
-                Log.i("SeekBar value", Integer.toString(i));
+                generateTimesTable(timesTableValue);
+                Log.i("SeekBar value", Integer.toString(timesTableValue));
             }
 
             @Override
